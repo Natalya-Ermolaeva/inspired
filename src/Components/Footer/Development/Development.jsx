@@ -1,12 +1,16 @@
-import s from './Development.module.scss';
+import s from "./Development.module.scss";
 
-export const Development = () => {
-    return (
-       <div className={s.development}>
-            <ul className={s.developmentList}>
-                <li className={s.link}><a href="#">Designer: Anastasia Ilina</a></li>
-                <li className={s.link}><a href="#">Developer: </a></li>
-            </ul>
-       </div>
-    )
-}
+export const Development = () => (
+    <div className={s.development}>
+        <ul className={s.developmentList}>
+            <li>
+                Designer: 
+                <a className={s.link} href="#"> Anastasia Ilina</a>
+            </li>
+            <li>
+                Developer:
+                <a className={s.link} href="#"> Natallia Ermolaeva</a>
+            </li>
+        </ul>
+    </div>
+)

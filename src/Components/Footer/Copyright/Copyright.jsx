@@ -1,7 +1,7 @@
-import s from './Copyright.module.scss';
+import s from "./Copyright.module.scss";
 
-export const Copyright = () => {
-    return (
-        <p className={s.copyright}>© INSPIRED, 2023</p>
-    )
-}
+export const Copyright = () => (
+    <div className={s.copyright}>
+        <p>&copy; INSPIRED, 2023</p>
+    </div>
+)

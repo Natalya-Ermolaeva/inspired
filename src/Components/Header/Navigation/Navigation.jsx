@@ -1,11 +1,9 @@
 import { Gender } from "../Navigation/Gender/Gender";
 import { Category } from "../Navigation/Category/Category";
 
-export const Navigation = ({list}) => (
+export const Navigation = () => (
     <nav>
-        <div className='container'>
-            <Gender list={list}/>
-            <Category list={list}/>
-        </div>
+        <Gender/>
+        <Category/>
     </nav>
 )

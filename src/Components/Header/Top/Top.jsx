@@ -1,14 +1,17 @@
-import s from './Top.module.scss'
-import cn from 'classnames'
-import logo from '/src/assets/logo.svg'
+import { NavLink } from 'react-router-dom';
+
+import s from './Top.module.scss';
+import cn from 'classnames';
+import logo from '/src/assets/logo.svg';
+
 
 export const Top = () => (
     <div className={cn(s.top, s.container)}>
         <a className={cn(s.link, s.phone)} href='tel:89304902620'>8 930 490 26 20</a>
 
-        <a className={s.logo} href='/'>
+        <NavLink className={s.logo} to='/'>
             <img src={logo} alt="Логотип Inspired" />
-        </a>
+        </NavLink>
 
         <div className={s.navigation}>
             <ul className={s.navList}>

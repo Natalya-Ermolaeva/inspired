@@ -5,15 +5,13 @@ import { Container } from "../Layout/Container/Container";
 
 import s from "./Goods.module.scss";
 
-export const Goods = ({categoryData}) => {
-    const { goodsList } = useSelector(state => state.goods);
-   
-    const title =  categoryData?.title ?? "Новинки";
+export const Goods = ({title}) => {
+    const { goodsList } = useSelector(state => state.goods)
 
     return (
         <section>
             <Container>
-                <h2 className={s.title}>{title}</h2>
+                <h2 className={s.title}>{title ?? "Новинки"}</h2>
                 <ul className={s.list}>
                     {goodsList.map(item => (
                         <li key={item.id}>

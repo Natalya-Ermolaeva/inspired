@@ -33,6 +33,6 @@ export const MainPage = () => {
     return (
         <>
             {!category ? <Banner bannerData={genderData?.banner}/> : ""}
-            <Goods categoryData={categoryData}/>
+            <Goods title={categoryData?.title}/>
         </>
 )};

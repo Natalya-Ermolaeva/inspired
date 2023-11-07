@@ -13,7 +13,7 @@ export const fetchGender = createAsyncThunk(
 
 export const fetchCategory = createAsyncThunk(
     "goods/fetchCategory",
-    async param => {
+    async (param) => {
         const url = new URL(GOODS_URL);
         for (const key in param) {
             url.searchParams.append(key, param[key]);
@@ -28,6 +28,7 @@ const goodsSlice = createSlice({
     initialState: {
         status: "idle",
         goodsList: [],
+        topList: [],
         error: null,
         page: 0,
         pages: 0,
@@ -60,7 +61,7 @@ const goodsSlice = createSlice({
                 state.status = "error";
                 state.error = action.error.message;
             })
-    }    
+        }
 })
 
 export default goodsSlice.reducer;

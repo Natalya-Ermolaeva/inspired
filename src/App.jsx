@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { fetchNavigation } from "./features/navigationSlice";
 import { fetchColor } from "./features/colorSlice";
 import { ProductPage } from "./Components/ProductPage/ProductPage";
-import { FavoritePage } from "./Components/FavoritePage/FavoritePage";
+import { FavoritePage } from "./Components/FavoritesPage/FavoritesPage";
 import { CartPage } from "./Components/CartPage/CartPage";
 
 const router = createBrowserRouter(

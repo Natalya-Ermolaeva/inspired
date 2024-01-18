@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 import s from './Top.module.scss';
 import cn from 'classnames';
 import logo from '/src/assets/logo.svg';
-import Search from "../../../assets/search.svg?react";
-import Cart from "../../../assets/cart.svg?react";
-import Like from "../../../assets/heart.svg?react";
+import SearchSVG from "../../../assets/search.svg?react";
+import CartSVG from "../../../assets/cart.svg?react";
+import LikeSVG from "../../../assets/heart.svg?react";
 
 export const Top = () => (
     <div className={cn(s.top, s.container)}>
@@ -19,17 +19,17 @@ export const Top = () => (
             <ul className={s.navList}>
                 <li>
                     <button className={s.link}>
-                        <Search />                
+                        <SearchSVG />                
                     </button>
                 </li>
                 <li>
-                    <NavLink className={s.link} to="/cart">
-                        <Cart />
+                    <NavLink className={s.link} to='/cart'>
+                        <CartSVG />
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className={cn(s.link, s.like)} to="/favorite">
-                        <Like />
+                    <NavLink className={cn(s.link, s.like)} to='/favorite'>
+                        <LikeSVG />
                     </NavLink>
                 </li>
             </ul>

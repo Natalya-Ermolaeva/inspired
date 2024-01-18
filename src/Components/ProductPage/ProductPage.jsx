@@ -7,13 +7,13 @@ import cn from "classnames";
 import { Container } from "../Layout/Container/Container";
 import { API_URL } from "../../const";
 import { ColorList } from "../ColorList/ColorList";
-import Like from "../../assets/heart.svg?react";
 
 import s from "./ProductPage.module.scss";
 import { ProductSize } from "../ProductSize/ProductSize";
 import { Count } from "../Count/Count";
 import { Goods } from "../Goods/Goods";
 import { fetchCategory } from "../../features/goodsSlice";
+import { BtnLike } from "../BtnLike/BtnLike";
 
 export const ProductPage = () => {
     const dispatch = useDispatch();
@@ -79,7 +79,7 @@ export const ProductPage = () => {
                         <Count count={count} handleIncrement={handleIncrement} handleDecrement={handleDecrement}/>
                         <button className={s.addCart}>В корзину</button>
                         <button type="button" aria-label="Добавить в корзину">
-                            <Like />
+                            <BtnLike id={id}/>
                         </button>
                     </div>
                 </form>

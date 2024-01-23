@@ -12,7 +12,7 @@ import s from "./ProductPage.module.scss";
 import { ProductSize } from "../ProductSize/ProductSize";
 import { Count } from "../Count/Count";
 import { Goods } from "../Goods/Goods";
-import { fetchCategory } from "../../features/goodsSlice";
+import { fetchGoods } from "../../features/goodsSlice";
 import { BtnLike } from "../BtnLike/BtnLike";
 
 export const ProductPage = () => {
@@ -46,7 +46,7 @@ export const ProductPage = () => {
     }, [dispatch, id])
 
     useEffect(() => {
-         dispatch(fetchCategory({gender, category, count: 4, top: true, exclude: id}));
+         dispatch(fetchGoods({gender, category, count: 4, top: true, exclude: id}));
     }, [gender, category, dispatch, id])
 
     return (

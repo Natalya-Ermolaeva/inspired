@@ -13,7 +13,7 @@ const favoritesSlice = createSlice({
             }
             localStorage.setItem("favorites", JSON.stringify(state));
         },
-        removeFromFavorite(state,action) {
+        removeFromFavorite(state, action) {
             const id = action.payload.id;
             const index = state.indexOf(id);
             if (index !== -1) {

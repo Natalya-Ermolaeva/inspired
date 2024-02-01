@@ -23,6 +23,19 @@ export const fetchGoods = createAsyncThunk(
     }
 )
 
+export const fetchAll = createAsyncThunk(
+    "goods/fetchAll",
+    async param => {
+        const url = new URL(GOODS_URL);
+        for (const key in param) {
+            url.searchParams.append(key, param[key]);
+        }
+        url.searchParams.append("count", "all");
+        const response = await fetch(url);
+        return await response.json();
+    }
+)
+
 const goodsSlice = createSlice({
     name: "goods",
     initialState: {
@@ -65,6 +78,19 @@ const goodsSlice = createSlice({
                 state.totalCount = action.payload.totalCount;
             })
             .addCase(fetchGoods.rejected, (state, action) => {
+                state.status = "error";
+                state.error = action.error.message;
+            })
+            .addCase(fetchAll.pending, state => {
+                state.status = "loading";
+            })
+            .addCase(fetchAll.fulfilled, (state, action) => {
+                state.status = "success";
+                state.goodsList = action.payload;
+                state.pages = 0;
+                state.totalCount = null;
+            })
+            .addCase(fetchAll.rejected, (state, action) => {
                 state.status = "error";
                 state.error = action.error.message;
             })

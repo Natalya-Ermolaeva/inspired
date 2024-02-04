@@ -47,7 +47,8 @@ export const Order = ({cartItems}) => {
                                     className={s.input}
                                     type='text'
                                     placeholder='ФИО*'
-                                    name='fio'/>
+                                    name='fio'
+                                />
                                 <ErrorMessage className={s.error} name='fio' component={'span'}/>
                             </label>
                             <label className={s.label}>
@@ -55,7 +56,8 @@ export const Order = ({cartItems}) => {
                                     className={s.input}
                                     type='text'
                                     placeholder='Адрес доставки'
-                                    name='address'/>
+                                    name='address'
+                                />
                                 <ErrorMessage className={s.error} name='address' component={'span'}/>
                             </label>
                             <label className={s.label}>
@@ -66,7 +68,8 @@ export const Order = ({cartItems}) => {
                                     mask="_"
                                     type='text'
                                     placeholder='Телефон*'
-                                    name='phone'/>
+                                    name='phone'
+                                />
                                 <ErrorMessage className={s.error} name='phone' component={'span'}/>
                             </label>
                             <label className={s.label}>
@@ -74,7 +77,8 @@ export const Order = ({cartItems}) => {
                                     className={s.input}
                                     type='email'
                                     placeholder='E-mail'
-                                    name='email'/>
+                                    name='email'    
+                                />
                                 <ErrorMessage className={s.error} name='email' component={'span'}/>
                             </label>
                         </fieldset>

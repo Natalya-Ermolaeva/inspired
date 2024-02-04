@@ -6,10 +6,16 @@ import logo from '/src/assets/logo.svg';
 import SearchSVG from "../../../assets/search.svg?react";
 import CartSVG from "../../../assets/cart.svg?react";
 import LikeSVG from "../../../assets/heart.svg?react";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleDisplaySearch } from '../../../features/searchSlice';
 
 export const Top = () => {
     const { countItems } = useSelector(state => state.cart);
+    const dispatch = useDispatch();
+
+    const handleOpenSearch = () => {
+        dispatch(toggleDisplaySearch());
+    }
     
     return (
         <div className={cn(s.top, s.container)}>
@@ -22,7 +28,7 @@ export const Top = () => {
             <div className={s.navigation}>
                 <ul className={s.navList}>
                     <li>
-                        <button className={s.link}>
+                        <button className={s.link} onClick={handleOpenSearch}>
                             <SearchSVG />                
                         </button>
                     </li>

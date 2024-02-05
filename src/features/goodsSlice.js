@@ -56,6 +56,7 @@ const goodsSlice = createSlice({
         builder
             .addCase(fetchGender.pending, state => {
                 state.status = "loading";
+                state.totalCount = null;
             })
             .addCase(fetchGender.fulfilled, (state, action) => {
                 state.status = "success";
@@ -66,9 +67,11 @@ const goodsSlice = createSlice({
             .addCase(fetchGender.rejected, (state, action) => {
                 state.status = "error";
                 state.error = action.error.message;
+                state.totalCount = null;
             })
             .addCase(fetchGoods.pending, state => {
                 state.status = "loading";
+                state.totalCount = null;
             })
             .addCase(fetchGoods.fulfilled, (state, action) => {
                 state.status = "success";
@@ -80,9 +83,11 @@ const goodsSlice = createSlice({
             .addCase(fetchGoods.rejected, (state, action) => {
                 state.status = "error";
                 state.error = action.error.message;
+                state.totalCount = null;
             })
             .addCase(fetchAll.pending, state => {
                 state.status = "loading";
+                state.totalCount = null;
             })
             .addCase(fetchAll.fulfilled, (state, action) => {
                 state.status = "success";
@@ -93,6 +98,7 @@ const goodsSlice = createSlice({
             .addCase(fetchAll.rejected, (state, action) => {
                 state.status = "error";
                 state.error = action.error.message;
+                state.totalCount = null;
             })
         }
 })

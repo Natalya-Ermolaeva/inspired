@@ -3,11 +3,13 @@ import { Cart } from "./Cart/Cart"
 import { Order } from "./Order/Order"
 import { useEffect, useState } from "react";
 import { fetchAll } from "../../features/goodsSlice";
+import { OrderModal } from "./OrderModal/OrderModal";
 
 export const CartPage = () => {
     const { cartItems, countItems } = useSelector(state => state.cart);
     const { goodsList } = useSelector(state => state.goods);
     const [ count, setCount ] = useState(0);
+    const { orderStatus } = useSelector(state => state.cart);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -20,7 +22,8 @@ export const CartPage = () => {
     return (
         <>
             <Cart cartItems={cartItems} goodsList={goodsList}/>
-            <Order cartItems={cartItems} />
+            {!!cartItems.length && <Order cartItems={cartItems} />}
+            {orderStatus === "success" && <OrderModal />}
         </>
     )
 }
